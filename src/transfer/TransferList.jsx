@@ -1,22 +1,36 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import TransferItem from './TransferItem';
 
-export default class TodoList extends React.Component {
+// material-ui
+import {List, ListItem} from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
+import Avatar from 'material-ui/Avatar';
+import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors';
+
+
+export default class TransferList extends React.Component {
   constructor(props) {
     super(props);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
   render() {
     return (
-      <section className="main">
-        <ul className="transfer-list">
-          {this.props.transfers.map(item =>
-            <TransferItem
-                      text={item.get('text')} />
-          )}
-        </ul>
-      </section>
+        <List>
+          <Subheader>Ultimas transaciones</Subheader>
+          <ListItem
+            primaryText="10 LUK para cerveza"
+            secondaryText={
+            <p>
+              <span style={{color: darkBlack}}>Tea Rozic</span> --
+              envio 10 lukas para la cerveza
+            </p>
+          }
+          secondaryTextLines={2}
+          />
+        </List>
+
+
     );
   }
 };

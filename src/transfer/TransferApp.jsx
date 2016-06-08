@@ -1,5 +1,6 @@
 import React from 'react';
-import TransferList from './TransferList'
+import TransferList from './TransferList';
+import Paper from 'material-ui/Paper';
 
 export default class TransferApp extends React.Component {
   getItems() {
@@ -8,9 +9,7 @@ export default class TransferApp extends React.Component {
   render () {
     return (
       <div>
-        <section className="transferapp">
           <TransferList transfers={this.props.transfers} />
-        </section>
       </div>
     );
  }

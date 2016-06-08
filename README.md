@@ -15,6 +15,10 @@ Transfers
     amount
   filter
 
+People
+  items
+  filter
+
 ## Setup
 
 The UX is based on react and redux.
