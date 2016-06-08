@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {List, Map} from 'immutable';
 
-import TransferApp from './transfer/TransferApp';
+import TransferApp from '../transfer/TransferApp';
 
 const transfers = List.of(
   Map({id: 1, text: 'me', to: 'you', amount: '15'}),
