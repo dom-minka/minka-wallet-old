@@ -1,14 +1,14 @@
 {
   "name": "wallet",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Minka Wallet Starter Kit",
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js 'test/**/*.@(js|jsx)'",
     "test:watch": "npm run test -- --watch --watch-extensions jsx"
   },
   "keywords": [],
-  "author": "",
+  "author": "Domagoj Rozic",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.9.1",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "immutable": "^3.8.1",
+    "material-ui": "^0.15.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   }
