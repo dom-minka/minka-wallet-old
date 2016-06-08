@@ -6,17 +6,22 @@ import {List, Map} from 'immutable';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+import Header from './Header';
 import TransferApp from '../transfer/TransferApp';
 
 const transfers = List.of(
-  Map({id: 1, text: 'me', to: 'you', amount: '15'}),
-  Map({id: 2, text: 'him', to: 'other', amount: '13'}),
-  Map({id: 3, text: 'me', to: 'me', amount: '100'})
+  Map({id: 1, source: 'Tea', destination: 'Domagoj', description:'para cerveza', amount: '15'}),
+  Map({id: 2, source: 'Laura', destination: 'Domagoj',description:'para cafe', amount: '13'}),
+  Map({id: 3, source: 'Domagoj', destination: 'Tea',description:'para libro', amount: '100'}),
+    Map({id: 4, source: 'Domagoj', destination: 'Tea',description:'beso', amount: '100'})
 );
 
 const App = () => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
-    <TransferApp transfers={ transfers } />
+    <div>
+      <Header />
+      <TransferApp transfers={ transfers } />
+      </div>
   </MuiThemeProvider>
 );
 
