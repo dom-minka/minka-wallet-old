@@ -9,47 +9,13 @@ import Menu from 'material-ui/Menu';
 
 class Header extends React.Component {
 
-  constructor(props, context) {
-    super(props, context);
-    this.handleTouchTap = this.handleTouchTap.bind(this);
-
-    this.state = {
-      open: false,
-    };
-  }
-
-  handleTouchTap() {
-    this.setState({open: !this.state.open});
-  }
-
   render () {
     return (
-      <div>
-      <Drawer open={this.state.open}>
-            <Paper>
-              <div> test </div>
-            </Paper>
-            <Divider />
-            <MenuItem
-              primaryText="Billetera"
-              />
-          <Divider />
-            <MenuItem
-              primaryText="Tienda"
-              />
-                <Divider />
-                <MenuItem
-                  primaryText="Admin"
-                  />
-            <Divider />
-
-      </Drawer>
       <AppBar
         title="misLukas"
         onLeftIconButtonTouchTap={this.handleTouchTap}
         //iconElementRight={<Avatar src="img/avatar_male.png" />}
       />
-      </div>
     );
   }
 }
