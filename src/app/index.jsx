@@ -11,8 +11,7 @@ import reducer from './reducer';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Header from './Header';
-import TransferApp from '../transfer/TransferApp';
+import {TransferAppContainer} from '../transfer/TransferApp';
 //import Main from './Main';
 
 // Redux store
@@ -24,20 +23,17 @@ store.dispatch({
     transfers: [
       {id: 1, source: 'Tea', destination: 'Domagoj', description:'para cerveza', amount: '15'},
       {id: 2, source: 'Laura', destination: 'Domagoj',description:'para cafe', amount: '13'},
-      {id: 3, source: 'Domagoj', destination: 'Tea',description:'para libro', amount: '100'},
+      {id: 3, source: 'Tea', destination: 'Tea',description:'para libro', amount: '100'},
       {id: 4, source: 'Domagoj', destination: 'Tea',description:'beso', amount: '100'}
-    ],
-    filter: 'all'
+    ]
   }
 });
 
 const App = () => (
-  <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Header />
-  </MuiThemeProvider>
+  <Provider store={store}>
+      <TransferAppContainer />
+  </Provider>
 );
-
-//  <TransferApp transfers={ transfers } />
 
 ReactDOM.render(
   <App />,
